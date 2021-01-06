@@ -12,6 +12,10 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   ${reset}
   ${normalize}
 
+  * {
+    box-sizing: border-box;
+  }
+
   html, body {
     font-family: 'Roboto Condensed', serif;
     font-weight: 300;

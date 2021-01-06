@@ -18,9 +18,9 @@ export const Content = styled.div`
     text-shadow: 3px 3px 0px ${p => p.theme.colors.red};
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     h1 {
-      font-size: 4em;
+      font-size: 7em;
     }
   }
 `
@@ -36,13 +36,26 @@ export const Survivors = styled.div`
   * {
     flex: 0 0 auto;
   }
+
+  @media (min-width: 700px) {
+    max-width: unset;
+    flex-direction: column;
+    flex-wrap: initial;
+    overflow-x: hidden;
+  }
 `
 
 export const Grid = styled.div`
   width: 100%;
+
+  @media (min-width: 700px) {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+  }
 `
 
 export const Sidebar = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;

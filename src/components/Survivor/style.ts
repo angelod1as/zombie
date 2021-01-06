@@ -43,6 +43,11 @@ export const Wrapper = styled.button<WrapperProps>`
         right: 0;
       }
     `}
+
+  @media (min-width: 700px) {
+    margin: 10px 0;
+    min-width: 300px;
+  }
 `
 
 export const Name = styled.h2`

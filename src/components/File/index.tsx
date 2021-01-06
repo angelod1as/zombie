@@ -58,7 +58,7 @@ export default function File({ selectedSurvivor, setInfected }: FileProps) {
   }
   return (
     <Waiting>
-      <h2>Select a possible survivor above</h2>
+      <h2>Select a possible survivor</h2>
     </Waiting>
   )
 }

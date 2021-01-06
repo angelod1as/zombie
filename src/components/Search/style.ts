@@ -4,6 +4,11 @@ export const Wrapper = styled.div`
   label,
   input {
     display: block;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 700px) {
+    min-width: 300px;
   }
 
   input {
@@ -14,6 +19,7 @@ export const Wrapper = styled.div`
     border-radius: 5px;
     font-size: 0.95em;
     line-height: 120%;
+    width: 100%;
 
     color: ${p => p.theme.colors.red};
 

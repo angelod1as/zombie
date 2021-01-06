@@ -14,6 +14,15 @@ export const Image = styled.div<{ infected: boolean }>`
     max-height: 150px;
   }
 
+  @media (min-width: 700px) {
+    width: 300px;
+    height: 300px;
+
+    img {
+      max-height: 300px;
+    }
+  }
+
   ${p =>
     p.infected &&
     css`
@@ -51,6 +60,10 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (min-width: 700px) {
+    justify-content: flex-start;
+  }
 `
 
 export const Infected = styled.div`
