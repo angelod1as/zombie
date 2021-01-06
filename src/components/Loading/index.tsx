@@ -1,5 +1,11 @@
-import { Wrapper } from '../Survivor/style'
+import { Wrapper } from './style'
+import brain from './brain.svg'
 
 export default function Loading() {
-  return <Wrapper>Loading...</Wrapper>
+  return (
+    <Wrapper>
+      <h1>Loading...</h1>
+      <img src={brain} alt="" />
+    </Wrapper>
+  )
 }
