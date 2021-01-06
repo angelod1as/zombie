@@ -5,11 +5,16 @@ export const Content = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 
+  min-height: 100vh;
+
+  background-color: ${p => p.theme.colors.lightGreen};
   h1 {
     font-size: 4em;
+    color: ${p => p.theme.colors.lightRed};
+    text-shadow: 3px 3px 0px ${p => p.theme.colors.red};
   }
 
   @media (min-width: 600px) {
