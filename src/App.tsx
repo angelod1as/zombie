@@ -5,7 +5,9 @@ import Main from './components/Main'
 import Error from './components/Error'
 import Loading from './components/Loading'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  max-width: 100vw;
+`
 
 export interface JsonData {
   survivors: SurvivorProps[]

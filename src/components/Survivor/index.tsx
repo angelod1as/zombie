@@ -21,6 +21,7 @@ export default function Survivor({
   name,
   country,
   city,
+  infected,
   selected,
   setSelected,
 }: SurvivorCompProps) {
@@ -31,7 +32,11 @@ export default function Survivor({
   }, [setSelected, name, thisSelected])
 
   return (
-    <Wrapper onClick={handleClick}>
+    <Wrapper
+      thisSelected={thisSelected}
+      infected={infected}
+      onClick={handleClick}
+    >
       <Name>{name}</Name>
       <Location>
         {city} - {country}

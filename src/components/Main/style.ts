@@ -7,6 +7,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  position: relative;
 
   min-height: 100vh;
 
@@ -24,16 +25,21 @@ export const Content = styled.div`
   }
 `
 export const Survivors = styled.div`
-  margin-top: 20px;
-
-  max-width: 100vw;
   display: flex;
-  overflow: auto;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100vw;
+  margin: 15px 0;
+  padding: 15px 0 15px 0;
+
+  * {
+    flex: 0 0 auto;
+  }
 `
 
 export const Grid = styled.div`
-  /* display: grid;
-  grid-template-columns: 300px 1fr; */
+  width: 100%;
 `
 
 export const Sidebar = styled.div`

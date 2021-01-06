@@ -13,11 +13,11 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   ${normalize}
 
   html, body {
-    height: 100%;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Condensed', serif;
     font-weight: 300;
     font-size: 18px;
     line-height: 120%;
+    overflow-x: hidden;
   }
 
   h1 {

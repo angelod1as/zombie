@@ -1,21 +1,56 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.button`
+interface WrapperProps {
+  thisSelected: boolean
+  infected: boolean
+}
+
+export const Wrapper = styled.button<WrapperProps>`
   cursor: pointer;
-  margin: 0;
   border: 0;
-  padding: 0;
   background-color: transparent;
 
-  display: block;
   min-width: 200px;
-  width: 200px;
-  min-height: 125px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  background-color: ${p =>
+    p.thisSelected ? p.theme.colors.red : p.theme.colors.darkGreen};
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px
+    ${p => (p.thisSelected ? p.theme.colors.lightRed : p.theme.colors.green)};
+
+  margin: 0 10px;
+  padding: 20px 0;
+
+  position: relative;
+
+  ${p =>
+    p.infected &&
+    css`
+      &:after {
+        color: ${p.thisSelected
+          ? p.theme.colors.darkGreen
+          : p.theme.colors.red};
+        opacity: 0.7;
+        content: 'X';
+        font-family: 'Creepster', sans-serif;
+        position: absolute;
+        font-size: 8.5em;
+        line-height: 0.6em;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    `}
 `
-export const Name = styled.h2``
-export const Location = styled.p``
+
+export const Name = styled.h2`
+  color: white;
+  font-size: 1.3em;
+`
+
+export const Location = styled.p`
+  color: white;
+  margin: 0;
+`
