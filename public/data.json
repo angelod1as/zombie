@@ -1,0 +1,44 @@
+{
+  "survivors": [
+    {
+      "name": "Joana Santos",
+      "photo": "",
+      "country": "Brazil",
+      "city": "Mogi das Cruzes",
+      "specialities": ["great cook", "fast runner"],
+      "issues": ["loud sleeper", "overeater"]
+    },
+    {
+      "name": "Ana Paula",
+      "photo": "",
+      "country": "Brazil",
+      "city": "Suzano",
+      "specialities": ["aggressive protector"],
+      "issues": ["selfish", "lazy"]
+    },
+    {
+      "name": "Marco Pallas",
+      "photo": "",
+      "country": "Italy",
+      "city": "Milan",
+      "specialities": ["engineer", "fast runner", "fit"], 
+      "issues": ["high maintenance", "selfish"]
+    },
+    {
+      "name": "Juarez Malato",
+      "photo": "",
+      "country": "Uruguay",
+      "city": "Trinidad",
+      "specialities": ["low maintenance", "good spirits"], 
+      "issues": ["slow"]
+    },
+    {
+      "name": "Paula Lista",
+      "photo": "",
+      "country": "Germany",
+      "city": "Berlin",
+      "specialities": ["creative", "good spirits", "trustworthy"], 
+      "issues": ["overeater", "anxious", "loud talker"]
+    }
+  ]
+}
