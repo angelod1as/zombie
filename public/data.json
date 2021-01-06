@@ -29,7 +29,7 @@
       "photo": "4.jpeg",
       "country": "Uruguay",
       "city": "Trinidad",
-      "specialities": ["low maintenance", "good spirits"], 
+      "specialities": ["low maintenance", "funny"], 
       "issues": ["slow"]
     },
     {
@@ -37,7 +37,7 @@
       "photo": "5.jpeg",
       "country": "Germany",
       "city": "Berlin",
-      "specialities": ["creative", "good spirits", "trustworthy"], 
+      "specialities": ["creative", "funny", "trustworthy"], 
       "issues": ["overeater", "anxious", "loud talker"]
     }
   ]

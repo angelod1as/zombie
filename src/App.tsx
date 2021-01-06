@@ -1,13 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { SurvivorProps } from './components/Survivor'
 import Main from './components/Main'
 import Error from './components/Error'
 import Loading from './components/Loading'
-
-const Wrapper = styled.div`
-  max-width: 100vw;
-`
 
 export interface JsonData {
   survivors: SurvivorProps[]
@@ -67,7 +62,7 @@ function App() {
     return <Loading />
   }
 
-  return <Wrapper>{rendered()}</Wrapper>
+  return rendered()
 }
 
 export default App
