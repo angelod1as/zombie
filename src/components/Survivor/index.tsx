@@ -19,7 +19,9 @@ export interface SurvivorProps {
   city: string
   specialities: string[]
   issues: string[]
+  infected: boolean
   selected: string
+  setInfected: (name: string) => void
   setSelected: React.Dispatch<React.SetStateAction<string>>
 }
 
@@ -31,7 +33,9 @@ export default function Survivor({
   specialities,
   issues,
   selected,
+  infected,
   setSelected,
+  setInfected,
 }: SurvivorProps) {
   const thisSelected = slugify(name) === slugify(selected)
 
@@ -49,7 +53,13 @@ export default function Survivor({
         <>
           <Infected>
             <label htmlFor="infected">Infected</label>
-            <input type="checkbox" name="infected" id="infected" />
+            <input
+              type="checkbox"
+              name="infected"
+              id="infected"
+              checked={infected}
+              onChange={() => setInfected(name)}
+            />
           </Infected>
           <Grid>
             <Specialities>

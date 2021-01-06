@@ -1,25 +1,20 @@
 import { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Survivors from './components/Survivors'
-import { SurvivorProps } from './components/Survivors/Survivor'
+import { SurvivorProps } from './components/Survivor'
+import Main from './components/Main'
+import Error from './components/Error'
+import Loading from './components/Loading'
 
 const Wrapper = styled.div``
-const Error = styled.div``
-const Content = styled.div`
-  padding: 0 20px;
-  margin: 40px auto;
-  max-width: 620px;
-`
-const Loading = styled.div``
 
 export interface JsonData {
   survivors: SurvivorProps[]
 }
 
 function App() {
-  const [data, setData] = useState<JsonData['survivors']>()
+  const [data, setData] = useState<JsonData['survivors']>([])
   const [selected, setSelected] = useState('')
-  const [error, setError] = useState()
+  const [error, setError] = useState(null)
 
   const getData = useCallback(async () => {
     try {
@@ -30,7 +25,11 @@ function App() {
         },
       })
       const data: JsonData = await fetchResponse.json()
-      setData(data.survivors)
+      const withInfected = data.survivors.map(survivor => {
+        survivor.infected = false
+        return survivor
+      })
+      setData(withInfected)
     } catch (error) {
       console.log(error)
       setError(error)
@@ -41,17 +40,27 @@ function App() {
     getData()
   }, [getData])
 
+  const setInfected = useCallback(
+    (name: string) => {
+      if (data) {
+        const survivors = data.map(survivor => {
+          if (survivor.name === name) {
+            survivor.infected = !survivor.infected
+          }
+          return survivor
+        })
+        setData(survivors)
+      }
+    },
+    [data]
+  )
+
   const rendered = () => {
     if (error) {
-      return <Error>Ocorreu um erro, tente novamente mais tarde</Error>
+      return <Error {...{ error }} />
     }
     if (data) {
-      return (
-        <Content>
-          <h1>Outbreak</h1>
-          <Survivors survivors={data} {...{ selected, setSelected }} />
-        </Content>
-      )
+      return <Main {...{ data, selected, setSelected, setInfected }} />
     }
     return <Loading />
   }
