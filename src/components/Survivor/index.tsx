@@ -1,16 +1,6 @@
-import { nanoid } from 'nanoid'
+import { useCallback } from 'react'
 import slugify from 'slugify'
-import SeeMore from 'src/components/SeeMore'
-import {
-  Wrapper,
-  Image,
-  Grid,
-  Issues,
-  Location,
-  Name,
-  Specialities,
-  Infected,
-} from './style'
+import { Wrapper, Image, Location, Name } from './style'
 
 export interface SurvivorProps {
   name: string
@@ -20,8 +10,10 @@ export interface SurvivorProps {
   specialities: string[]
   issues: string[]
   infected: boolean
+}
+
+export interface SurvivorCompProps extends SurvivorProps {
   selected: string
-  setInfected: (name: string) => void
   setSelected: React.Dispatch<React.SetStateAction<string>>
 }
 
@@ -30,17 +22,17 @@ export default function Survivor({
   photo,
   country,
   city,
-  specialities,
-  issues,
   selected,
-  infected,
   setSelected,
-  setInfected,
-}: SurvivorProps) {
+}: SurvivorCompProps) {
   const thisSelected = slugify(name) === slugify(selected)
 
+  const handleClick = useCallback(() => {
+    setSelected(thisSelected ? '' : name)
+  }, [setSelected, name, thisSelected])
+
   return (
-    <Wrapper>
+    <Wrapper onClick={handleClick}>
       <Image>
         <img src={photo} alt="" />
       </Image>
@@ -48,35 +40,6 @@ export default function Survivor({
       <Location>
         {city} - {country}
       </Location>
-      <SeeMore {...{ setSelected, name, thisSelected }} />
-      {thisSelected && (
-        <>
-          <Infected>
-            <label htmlFor="infected">Infected</label>
-            <input
-              type="checkbox"
-              name="infected"
-              id="infected"
-              checked={infected}
-              onChange={() => setInfected(name)}
-            />
-          </Infected>
-          <Grid>
-            <Specialities>
-              <h3>Specialities</h3>
-              {specialities.map(speciality => (
-                <p key={nanoid()}>{speciality}</p>
-              ))}
-            </Specialities>
-            <Issues>
-              <h3>Issues</h3>
-              {issues.map(issue => (
-                <p key={nanoid()}>{issue}</p>
-              ))}
-            </Issues>
-          </Grid>
-        </>
-      )}
     </Wrapper>
   )
 }
