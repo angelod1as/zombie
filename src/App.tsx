@@ -56,7 +56,8 @@ function App() {
   )
 
   const rendered = () => {
-    if (error) {
+    const test = true
+    if (test) {
       return <Error {...{ error }} />
     }
     if (data) {

@@ -7,5 +7,9 @@ interface ErrorProps {
 export default function Error({ error }: ErrorProps) {
   console.warn(error)
 
-  return <Wrapper>Ocorreu um erro, tente novamente mais tarde</Wrapper>
+  return (
+    <Wrapper>
+      <h1>Something went wrong. Contact the developer.</h1>
+    </Wrapper>
+  )
 }

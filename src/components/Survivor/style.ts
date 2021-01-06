@@ -10,9 +10,12 @@ export const Wrapper = styled.button`
   display: block;
   min-width: 200px;
   width: 200px;
-  min-height: 130px;
-`
+  min-height: 125px;
 
-export const Image = styled.div``
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`
 export const Name = styled.h2``
 export const Location = styled.p``

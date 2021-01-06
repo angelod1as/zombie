@@ -4,6 +4,11 @@ const colors = {
   gray: '#CCCCCC',
   darkgray: '#A9A9A9',
   darkergray: '#8B8B8B',
+  lightRed: '#e07d7d',
+  red: '#a93a3a',
+  green: '#5e9e70',
+  darkGreen: '#63a759',
+  lightGreen: '#b4e5b5',
 }
 
 export interface ThemeProps {

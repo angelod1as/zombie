@@ -19,6 +19,8 @@ export const Content = styled.div`
   }
 `
 export const Survivors = styled.div`
+  margin-top: 20px;
+
   max-width: 100vw;
   display: flex;
   overflow: auto;

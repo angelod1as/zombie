@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import slugify from 'slugify'
-import { Wrapper, Image, Location, Name } from './style'
+import { Wrapper, Location, Name } from './style'
 
 export interface SurvivorProps {
   name: string
@@ -19,7 +19,6 @@ export interface SurvivorCompProps extends SurvivorProps {
 
 export default function Survivor({
   name,
-  photo,
   country,
   city,
   selected,
@@ -33,9 +32,6 @@ export default function Survivor({
 
   return (
     <Wrapper onClick={handleClick}>
-      <Image>
-        <img src={photo} alt="" />
-      </Image>
       <Name>{name}</Name>
       <Location>
         {city} - {country}

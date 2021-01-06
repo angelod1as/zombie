@@ -1,6 +1,14 @@
 import { nanoid } from 'nanoid'
 import { SurvivorProps } from '../Survivor'
-import { Wrapper, Grid, Infected, Issues, Specialities } from './style'
+import {
+  Wrapper,
+  Grid,
+  Infected,
+  Issues,
+  Specialities,
+  Image,
+  Waiting,
+} from './style'
 
 interface FileProps {
   selectedSurvivor: SurvivorProps | undefined
@@ -12,6 +20,9 @@ export default function File({ selectedSurvivor, setInfected }: FileProps) {
     const { name, photo, specialities, issues, infected } = selectedSurvivor
     return (
       <Wrapper>
+        <Image>
+          <img src={`/static/${photo}`} alt="" />
+        </Image>
         <Infected>
           <label htmlFor="infected">Infected</label>
           <input
@@ -39,5 +50,9 @@ export default function File({ selectedSurvivor, setInfected }: FileProps) {
       </Wrapper>
     )
   }
-  return <div>NADA SELECIONADo</div>
+  return (
+    <Waiting>
+      <h2>Waiting for selection...</h2>
+    </Waiting>
+  )
 }

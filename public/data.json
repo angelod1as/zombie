@@ -2,7 +2,7 @@
   "survivors": [
     {
       "name": "Joana Santos",
-      "photo": "",
+      "photo": "1.jpeg",
       "country": "Brazil",
       "city": "Mogi das Cruzes",
       "specialities": ["great cook", "fast runner"],
@@ -10,7 +10,7 @@
     },
     {
       "name": "Ana Carolina Ferreira",
-      "photo": "",
+      "photo": "2.jpeg",
       "country": "Brazil",
       "city": "Suzano",
       "specialities": ["aggressive protector"],
@@ -18,7 +18,7 @@
     },
     {
       "name": "Marco Pallas",
-      "photo": "",
+      "photo": "3.jpeg",
       "country": "Italy",
       "city": "Milan",
       "specialities": ["engineer", "fast runner", "fit"], 
@@ -26,7 +26,7 @@
     },
     {
       "name": "Juarez Malato",
-      "photo": "",
+      "photo": "4.jpeg",
       "country": "Uruguay",
       "city": "Trinidad",
       "specialities": ["low maintenance", "good spirits"], 
@@ -34,7 +34,7 @@
     },
     {
       "name": "Paula Lista",
-      "photo": "",
+      "photo": "5.jpeg",
       "country": "Germany",
       "city": "Berlin",
       "specialities": ["creative", "good spirits", "trustworthy"], 
